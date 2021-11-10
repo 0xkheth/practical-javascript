@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+
+    <script>
+      var myArray = [{name: 'Gordon'}];
+
+      function exampleFunction(thing) {
+        // {name: 'Gordon'}
+        thing.name = 'changed by exampleFunction';
+        // {name: 'changed by exampleFunction'}
+  
+        // expectation: myArray[0] = {name: 'changed by exampleFunction'}
+        thing.thing = {name: 'new thing'};
+        // reality1: myArray[0] = {name: 'changed by exampleFunction', thing: {name: 'new thing'}}
+        // reality2: myArray[0] = {name: 'changed by exampleFunction', thing: {name: 'changed by exampleFunction', thing: {name: 'new thing'}}}
+      }      
+
+      exampleFunction(myArray[0]);
+      exampleFunction(myArray[0].thing);
+      console.log(myArray[0]);
+
+      // after executing exampleFunction(myArray[0]) once
+      // 1. unsure
+      // 2. true
+      // 3. false
+      // 4. false
+
+      // after executing exampleFunction(myArray[0]) twice
+      // 1. false
+      // 3. true
+
+      // 2, 3 are true
+    </script>
+  </body>
+</html>
