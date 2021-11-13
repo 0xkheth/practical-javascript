@@ -5,7 +5,7 @@
     <title>Practical JavaScript</title>
   </head>
   <body>
-
+    <button id='display-todos-button'>Display todos</button>
     <script>
       var todos = [
         {todoText: 'Item 1', completed: false},
@@ -42,6 +42,28 @@
         for (var i = 0; i < todos.length; i++) {
           console.log(todos[i]);
         }
+      }
+
+      function toggleAll() {
+        var counter = 0;
+
+        for (var i = 0; i < todos.length; i++) {
+          if (todos[i].completed === true) {
+            counter++;
+          }
+        }
+
+        if (todos.length === counter) {
+          for (var i = 0; i < todos.length; i++) {
+            todos[i].completed = false;
+          }
+        } else {
+          for (var i = 0; i < todos.length; i++) {
+            todos[i].completed = true;
+          }
+        }
+
+        displayTodos();
       }
     </script>
   </body>
