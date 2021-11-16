@@ -16,6 +16,10 @@
     <input id='remove-input'>
     <button id='toggle-button'>Toggle</button>
     <input id='toggle-input'>
+
+    <ul id='todos-ul'>
+    </ul>
+
     <script>
       var todos = [
         {todoText: 'Item 1', completed: false},
@@ -61,8 +65,17 @@
       }
 
       function displayTodos() {
+        var todosUl = document.getElementById('todos-ul');
+
         for (var i = 0; i < todos.length; i++) {
-          console.log(todos[i]);
+          // todos[i] = document.createElement('li');
+          // todosUl.appendChild(todos[i]);
+          var todoLi = document.createElement('li');
+          todosUl.appendChild(todoLi);
+
+          // var testLi = document.createElement('li');
+          // todos[i].appendChild(document.createTextNode(todos[i]));
+          // console.log(todos[i]);
         }
       }
 

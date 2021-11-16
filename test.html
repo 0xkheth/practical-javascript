@@ -5,36 +5,19 @@
     <title>Test</title>
   </head>
   <body>
+    <input id='input-1'>
 
     <script>
-      var myArray = [{name: 'Gordon'}];
+      debugger;
+      var input1 = document.getElementById('input-1');
+      var input1Value = input1.value;
+      input1Value = 'changed';
 
-      function exampleFunction(thing) {
-        // {name: 'Gordon'}
-        thing.name = 'changed by exampleFunction';
-        // {name: 'changed by exampleFunction'}
-  
-        // expectation: myArray[0] = {name: 'changed by exampleFunction'}
-        thing.thing = {name: 'new thing'};
-        // reality1: myArray[0] = {name: 'changed by exampleFunction', thing: {name: 'new thing'}}
-        // reality2: myArray[0] = {name: 'changed by exampleFunction', thing: {name: 'changed by exampleFunction', thing: {name: 'new thing'}}}
-      }      
+      var input2 = input1;
+      input2.value = 'input 2';
 
-      exampleFunction(myArray[0]);
-      exampleFunction(myArray[0].thing);
-      console.log(myArray[0]);
-
-      // after executing exampleFunction(myArray[0]) once
-      // 1. unsure
-      // 2. true
-      // 3. false
-      // 4. false
-
-      // after executing exampleFunction(myArray[0]) twice
-      // 1. false
-      // 3. true
-
-      // 2, 3 are true
+      input1.value = '';
+      input2.value = '';
     </script>
   </body>
 </html>
