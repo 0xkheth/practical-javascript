@@ -1,8 +1,12 @@
+Version 11
+[] Each todo should have its own toggle button
+[] The toggle buttons should actually work
+
 Version 10
 [x] Each todo should have its own remove button
-[] The remove buttons should actually work
+[x] The remove buttons should actually work
   [x] Add an event listener to each remove button
-  [] Refactor the remove function with an event listener
+  [x] Refactor the remove function with an event listener
 
 Version 9
 [x] There should be a li for each todo
