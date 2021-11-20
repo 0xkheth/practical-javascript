@@ -11,8 +11,8 @@
     <button id='edit-button'>Edit</button>
     <input id='edit-position-input'>
     <input id='edit-text-input'>
-    <button id='remove-button'>Remove</button>
-    <input id='remove-input'>
+    <!-- <button id='remove-button'>Remove</button>
+    <input id='remove-input'> -->
     <button id='toggle-button'>Toggle</button>
     <input id='toggle-input'>
 
@@ -44,11 +44,24 @@
         displayTodos();
       }
 
-      function remove() {
-        var position = removeInput.value;
-        todos.splice(position, 1);
-        removeInput.value = '';
+      // function remove() {
+      //   var position = removeInput.value;
+      //   todos.splice(position, 1);
+      //   removeInput.value = '';
+      //   displayTodos();
+      // }
+
+      function remove(event) {
+        todos.splice(event.target.id, 1);
         displayTodos();
+
+        // console.log('new remove function is running!');
+
+        // event.toElement is the remove button we clicked on.
+        // event.target is the remove button we clicked on.
+          // event.target.id = '0';
+        // event.currentTarget is the remove button we clicked on.
+        // event.srcElement is the remove button we clicked on.
       }
 
       function toggle(position) {
@@ -75,6 +88,15 @@
           } else {
             todoLi.innerText = '[X] ' + todos[i].todoText;
           }
+
+          var removeButton = document.createElement('button');
+          removeButton.innerText = 'Remove';
+
+          // add the event listener
+
+          removeButton.addEventListener('click', remove);
+
+          todoLi.appendChild(removeButton);
 
           todosUl.appendChild(todoLi);
         }
@@ -114,9 +136,9 @@
       var editTextInput = document.getElementById('edit-text-input');
       editButton.addEventListener('click', edit);
 
-      var removeButton = document.getElementById('remove-button');
-      var removeInput = document.getElementById('remove-input');
-      removeButton.addEventListener('click', remove);
+      // var removeButton = document.getElementById('remove-button');
+      // var removeInput = document.getElementById('remove-input');
+      // removeButton.addEventListener('click', remove);
 
       var toggleButton = document.getElementById('toggle-button');
       var toggleInput = document.getElementById('toggle-input');
