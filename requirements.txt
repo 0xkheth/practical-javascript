@@ -1,6 +1,6 @@
 Version 11
-[] Each todo should have its own toggle button
-[] The toggle buttons should actually work
+[x] Each todo should have its own toggle button
+[x] The toggle buttons should actually work
 
 Version 10
 [x] Each todo should have its own remove button
