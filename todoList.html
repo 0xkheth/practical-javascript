@@ -11,8 +11,6 @@
     <button id='edit-button'>Edit</button>
     <input id='edit-position-input'>
     <input id='edit-text-input'>
-    <!-- <button id='toggle-button'>Toggle</button>
-    <input id='toggle-input'> -->
 
     <ul id='todos-ul'>
     </ul>
@@ -48,20 +46,21 @@
         displayTodos();
       }
 
-      // function toggle(position) {
-      //   var position = toggleInput.value;
-      //   if (todos[position].completed === false) {
-      //     todos[position].completed = true;
-      //   } else {
-      //     todos[position].completed = false;
-      //   }
-        
-      //   toggleInput.value = '';
-      //   displayTodos();
-      // }
-
       function toggle() {
-        var position = event.currentTarget.id;
+        // document.getElementById('toggle-i')
+        // toggle-i
+        // var position = event.currentTarget.id; 
+
+        // slice
+        // event.currentTarget.id.slice(-1);
+        // only works on single digit ids. if it exceeds 9 ie 10, ceases to work
+
+        // split
+        // 
+        
+        // x substring, toString, valueOf
+
+        var position = event.currentTarget.id.split('-')[1];
 
         if (todos[position].completed === false) {
           todos[position].completed = true;
@@ -89,11 +88,13 @@
           removeButton.innerText = 'Remove';
           removeButton.addEventListener('click', remove);
           removeButton.id = i;
+          // removeButton.id = 'remove-' + i;
 
           var toggleButton = document.createElement('button');
           toggleButton.innerText = 'Toggle';
           toggleButton.addEventListener('click', toggle);
-          toggleButton.id = i;
+          // toggleButton.id = i;
+          toggleButton.id = 'toggle-' + i;
 
           todoLi.appendChild(toggleButton);
           todoLi.appendChild(removeButton);
