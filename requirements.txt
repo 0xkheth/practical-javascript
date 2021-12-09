@@ -1,6 +1,8 @@
 Version 12
 [x] Each todo should have it's own edit button
 [x] The edit buttons should actually work
+[x] If someone hits cancel, nothing should happen.
+[x] It someone hits okay and the field is empty, nothing should happen.
 
 Version 11
 [x] Each todo should have its own toggle button

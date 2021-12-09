@@ -29,10 +29,13 @@
       }
 
       function edit() {
-        var newTodoText = prompt();
-        var position = event.currentTarget.id.split('-')[1];
-        todos[position].todoText = newTodoText;
-        displayTodos();
+        var newTodoText = prompt('Edit');
+        
+        if (newTodoText !== null && newTodoText !== "") {
+          var position = event.currentTarget.id.split('-')[1];
+          todos[position].todoText = newTodoText;
+          displayTodos();
+        }
       }
 
       function remove() {
