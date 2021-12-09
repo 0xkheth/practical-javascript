@@ -41,25 +41,14 @@
       }
 
       function remove() {
-        var position = event.currentTarget.id;
+        // var position = event.currentTarget.id;
+        var position = event.currentTarget.id.split('-')[1];
+
         todos.splice(position, 1);
         displayTodos();
       }
 
       function toggle() {
-        // document.getElementById('toggle-i')
-        // toggle-i
-        // var position = event.currentTarget.id; 
-
-        // slice
-        // event.currentTarget.id.slice(-1);
-        // only works on single digit ids. if it exceeds 9 ie 10, ceases to work
-
-        // split
-        // 
-        
-        // x substring, toString, valueOf
-
         var position = event.currentTarget.id.split('-')[1];
 
         if (todos[position].completed === false) {
@@ -87,8 +76,8 @@
           var removeButton = document.createElement('button');
           removeButton.innerText = 'Remove';
           removeButton.addEventListener('click', remove);
-          removeButton.id = i;
-          // removeButton.id = 'remove-' + i;
+          // removeButton.id = i;
+          removeButton.id = 'remove-' + i;
 
           var toggleButton = document.createElement('button');
           toggleButton.innerText = 'Toggle';
